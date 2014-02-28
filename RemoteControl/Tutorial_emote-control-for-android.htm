@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://code.google.com/p/remote-control-for-android/wiki/Tutorial -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link rel="icon" type="image/vnd.microsoft.icon" href="https://ssl.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/remote-control-for-android/wiki/Tutorial">
+ 
+ <script src="./Tutorial_emote-control-for-android_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./Tutorial_emote-control-for-android_files/plusone.js" gapi_processed="true"></script><script type="text/javascript">
+ 
+ (function(){(function(){function c(a){this.t={};this.tick=function(a,b,c){b=void 0!=c?c:(new Date).getTime();this.t[a]=b;if(void 0==c)try{window.console.timeStamp("CSI/"+a)}catch(d){}};this.tick("start",null,a)}var a;window.performance&&(a=window.performance.timing);var b=a?new c(a.responseStart):new c;window.jstiming={Timer:c,load:b};a&&(b=a.navigationStart,a=a.responseStart,0<b&&a>=b&&(window.jstiming.srt=a-b));try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT)),null==a&&
+window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT),a&&(window.jstiming.pt=a)}catch(d){}})();})();
+
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"profileUrl": null, "projectHomeUrl": "/p/remote-control-for-android", "projectName": "remote-control-for-android", "token": null, "assetVersionPath": "https://ssl.gstatic.com/codesite/ph/814337104528787223", "assetHostPath": "https://ssl.gstatic.com/codesite/ph", "loggedInUserEmail": null, "relativeBaseUrl": "", "domainName": null};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+ 
+ </script><script type="text/javascript" async="" src="./Tutorial_emote-control-for-android_files/ga.js"></script>
+ 
+ 
+ <title>Tutorial - 
+ remote-control-for-android -
+ 
+ A small tutorial on how to setup Remote Control for Android - 
+ Create simple connections between your Android phone and a server (e.g. a computer) - Google Project Hosting
+ </title>
+ <link type="text/css" rel="stylesheet" href="./Tutorial_emote-control-for-android_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="./Tutorial_emote-control-for-android_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="https://code.google.com/feeds/p/remote-control-for-android/svnchanges/basic?path=/wiki/Tutorial.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="https://ssl.gstatic.com/codesite/ph/814337104528787223/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(https://ssl.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+</head>
+<body class="t6">
+<script type="text/javascript">
+ window.___gcfg = {lang: 'en'};
+ (function() 
+ {var po = document.createElement("script");
+ po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+ var s = document.getElementsByTagName("script")[0];
+ s.parentNode.insertBefore(po, s);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ 
+ <a href="https://code.google.com/p/remote-control-for-android/wiki/Tutorial#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&ltmpl=phosting&continue=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial&followup=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial" onclick="_CS_click(&#39;/gb/ph/signin&#39;);"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+ <table style="padding:0px; margin: 0px 0px 10px 0px; width:100%" cellpadding="0" cellspacing="0" itemscope="" itemtype="http://schema.org/CreativeWork">
+ <tbody><tr style="height: 58px;">
+ 
+ 
+ 
+ <td id="plogo">
+ <link itemprop="url" href="https://code.google.com/p/remote-control-for-android">
+ <a href="https://code.google.com/p/remote-control-for-android/">
+ 
+ 
+ <img src="./Tutorial_emote-control-for-android_files/logo" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em">
+ 
+ <div id="pname">
+ <a href="https://code.google.com/p/remote-control-for-android/"><span itemprop="name">remote-control-for-android</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="https://code.google.com/p/remote-control-for-android/"><span itemprop="description">Create simple connections between your Android phone and a server (e.g. a computer)</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space:nowrap;text-align:right; vertical-align:bottom;">
+ 
+ <form action="https://code.google.com/hosting/search">
+ <input size="30" name="q" value="" type="text">
+ 
+ <input type="submit" name="projectsearch" value="Search projects">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="https://code.google.com/p/remote-control-for-android/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/remote-control-for-android/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/remote-control-for-android/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="https://code.google.com/p/remote-control-for-android/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+<table cellspacing="0" cellpadding="0" width="100%" align="center" border="0" class="st">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="https://code.google.com/p/remote-control-for-android/w/list" method="GET" style="display:inline">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1">&nbsp;All wiki pages</option>
+ <option value="3">&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4">&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input type="text" size="38" id="searchq" name="q" value="" autocomplete="off"></span>
+ 
+ 
+ 
+ <input type="submit" value="Search">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td align="right" valign="top" class="bevel-right"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol">
+
+ 
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align:top; padding-left:5px">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size:120%;font-weight:bold">Tutorial</span>
+ &nbsp;
+ <div> 
+ 
+ <i>A small tutorial on how to setup Remote Control for Android</i>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float:right">
+ Updated <span title="Wed Apr  4 17:29:05 2012">
+ Apr 4, 2012</span>
+ 
+ by 
+
+ <a class="userlink" href="https://code.google.com/u/109677739563997613514/">christia...@gmail.com</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <p>This small tutorial explains how to setup a basic remote control system and how to write a simple server. </p><p>You need to have basic knowledge on Python and know how to execute commands on your operating system </p><p>System requirements: </p><ul><li>A computer where Python 3 is installed </li><li>An Android phone </li><li>Phone has connection over IP to the server (port 57891)<br><br> </li></ul><p></p><h2><a name="Download_Remote_Control_for_Android"></a>Download Remote Control for Android<a href="https://code.google.com/p/remote-control-for-android/wiki/Tutorial#Download_Remote_Control_for_Android" class="section_anchor"></a></h2><p>First, download the remote-control-for-android source. At the moment there is no package to download in the Downloads section. You'll have to use the svn source repository. </p><ul><li>Install Subversion if you haven't installed it yet. </li></ul><ul><li>Download the latest revision: </li></ul><pre class="prettyprint"><span class="pln">svn checkout http</span><span class="pun">:</span><span class="com">//remote-control-for-android.googlecode.com/svn/trunk/ RemoteControlForAndroid</span></pre><h2><a name="Install_client_on_the_phone"></a>Install client on the phone<a href="https://code.google.com/p/remote-control-for-android/wiki/Tutorial#Install_client_on_the_phone" class="section_anchor"></a></h2><p>Next step is to install the client app on your Android phone. First you will have to get the .apk file. You can build the APK file using Eclipse. </p><ul><li>Connect your phone with the USB cable (or any other connection type where you can access the SD card) </li></ul><p></p><ul><li>Copy the file <strong><tt>RemoteControlClient/bin/RemoteControlClient.apk</tt></strong> over to the SD card </li></ul><ul><li>For browsing the SD card, install an app from the Android Market like "ES File Explorer" or "ASTRO" </li></ul><ul><li>Open the installed file browser app and search for the .apk file. Click it and install </li></ul><h2><a name="Setup_the_server"></a>Setup the server<a href="https://code.google.com/p/remote-control-for-android/wiki/Tutorial#Setup_the_server" class="section_anchor"></a></h2><ul><li>Create a folder on your PC where you want the server project to be stored. </li></ul><ul><li>Copy the file <strong><tt>RemoteControlServer/RemoteControlServer.py</tt></strong> to this folder </li></ul><ul><li>Create a Python text file named <strong><tt>myserver.py</tt></strong> </li></ul><ul><li>Put this code into the file: </li><pre class="prettyprint"><span class="kwd">import</span><span class="pln"> </span><span class="typ">RemoteControlServer</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> RCS<br><br></span><span class="com"># define the callback function</span><span class="pln"><br></span><span class="kwd">def</span><span class="pln"> sayHello</span><span class="pun">():</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"Hello! It works!"</span><span class="pln"><br><br></span><span class="com"># create the button definition</span><span class="pln"><br></span><span class="com"># this is what will be displayed on the phone when it connects to the server</span><span class="pln"><br>butDef </span><span class="pun">=</span><span class="pln"> RCS</span><span class="pun">.</span><span class="typ">ButtonsDefinition</span><span class="pun">()</span><span class="pln"><br>butDef</span><span class="pun">.</span><span class="pln">addButton</span><span class="pun">(</span><span class="str">"Hello"</span><span class="pun">,</span><span class="pln"> sayHello</span><span class="pun">)</span><span class="pln"><br><br></span><span class="com"># create server object</span><span class="pln"><br>server </span><span class="pun">=</span><span class="pln"> RCS</span><span class="pun">.</span><span class="typ">Server</span><span class="pun">(</span><span class="pln">butDef</span><span class="pun">)</span><span class="pln"><br><br></span><span class="com"># run the server (blocks)</span><span class="pln"><br></span><span class="kwd">print</span><span class="pln"> </span><span class="str">'Running server'</span><span class="pln"><br>server</span><span class="pun">.</span><span class="pln">run</span><span class="pun">()</span></pre></ul><p>All this code does is start the server and tell it to run sayHello when the person on the phone presses "Hello". </p><p>Now run the server with the command <strong><tt>python myserver.py</tt></strong> </p><h2><a name="Connect_your_phone_to_the_server"></a>Connect your phone to the server<a href="https://code.google.com/p/remote-control-for-android/wiki/Tutorial#Connect_your_phone_to_the_server" class="section_anchor"></a></h2><ul><li>First, find out the IP address of your computer (run <strong><tt>ifconfig</tt></strong> on GNU/Linux or <strong><tt>ipconfig</tt></strong> on Windows). </li></ul><ul><li>Now open the client app on the phone. </li></ul><ul><li>You should see a screen asking you to enter an IP address. </li></ul><ul><li>Enter the IP address of the server. </li></ul><ul><li>If everything goes well, you should see now a screen with one button labeled "Hello" </li></ul><p><br><br> That should be everything you need to setup the hello world server. </p><p>Inside the callback functions you can execute now anything you want. To run a command use this: </p><pre class="prettyprint"><span class="kwd">import</span><span class="pln"> subprocess<br><br></span><span class="kwd">def</span><span class="pln"> myFunc</span><span class="pun">():</span><span class="pln"><br>&nbsp; &nbsp; subprocess</span><span class="pun">.</span><span class="pln">call</span><span class="pun">([</span><span class="str">'my_prog'</span><span class="pun">,</span><span class="str">'my_arg1'</span><span class="pun">,</span><span class="str">'my_arg2'</span><span class="pun">])</span></pre><p>If you encounter any problems, feel free to ask a question in <a href="http://groups.google.com/group/remote-control-for-android" rel="nofollow">http://groups.google.com/group/remote-control-for-android</a> </p>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ <div id="wikicommentcol">
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+<div class="collapse">
+
+
+ 
+
+
+<div id="commentlist">
+
+ 
+ <div class="artifactcomment">
+ 
+ 
+ 
+ 
+ 
+ 
+ <span class="author">Comment
+ 
+ by 
+ 
+ 
+
+ 
+ <span class="userlink">vijay_sh...@rediffmail.com</span>,
+ 
+ </span>
+ <span class="date" title="Mon Mar  7 18:54:59 2011">Mar 7, 2011</span>
+ <div>
+<div class="commentcontent">
+<p>It is nice Your Projects are Very Nice </p>
+</div>
+ 
+ 
+ </div>
+ </div>
+ 
+
+ 
+ <div class="artifactcomment">
+ 
+ 
+ 
+ 
+ 
+ 
+ <span class="author">Comment
+ 
+ by 
+ 
+ 
+
+ 
+ <span class="userlink">hasha...@gmail.com</span>,
+ 
+ </span>
+ <span class="date" title="Sun May 20 11:36:34 2012">May 20, 2012</span>
+ <div>
+<div class="commentcontent">
+<p>Hey i need help regarding my android app which sends strings to server using buttons on click. Please contact me if you can help. hasham19@gmail.com </p>
+</div>
+ 
+ 
+ </div>
+ </div>
+ 
+
+</div>
+</div>
+
+ 
+
+
+ <script type="text/javascript">
+ function delComment(sequence_num, create_time, delete_mode) {
+ var f = document.forms["delcom"];
+ f.sequence_num.value = sequence_num;
+ f.create_time.value = create_time;
+ f.mode.value = delete_mode;
+ f.submit();
+ return false;
+ }
+ </script>
+
+
+ </div>
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">►</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&ltmpl=phosting&continue=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial&followup=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial">Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="https://code.google.com/p/remote-control-for-android/w/delComment.do" method="POST">
+ <input type="hidden" name="sequence_num" value="">
+ <input type="hidden" name="create_time" value="">
+ <input type="hidden" name="mode" value="">
+ <input type="hidden" name="pagename" value="Tutorial">
+ <input type="hidden" name="token" value="">
+ </form>
+
+
+ <script src="./Tutorial_emote-control-for-android_files/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="./Tutorial_emote-control-for-android_files/dit_scripts.js"></script>
+
+
+
+  
+ 
+ 
+ <script type="text/javascript" src="./Tutorial_emote-control-for-android_files/ph_core.js"></script>
+ 
+ <script type="text/javascript" src="./Tutorial_emote-control-for-android_files/ph_dwiki.js"></script>
+ 
+ 
+ 
+ 
+</div> 
+
+<div id="footer" dir="ltr">
+ <div class="text">
+ <a href="https://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="https://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+
+ 
+ 
+
+
+ 
+ 
+ <script type="text/javascript">_CS_reportToCsi();</script>
+ 
+ 
+
+
+
+<div class="menuDiv instance0" id="menuDiv-projects-dropdown" style="position: absolute; top: 19px; left: 1115px; display: none;"><div class="menuCategory default" style="display: none;"></div><div class="menuCategory controls first"><a class="menuItem" href="http://www.google.com/accounts/ServiceLogin?service=code&ltmpl=phosting&continue=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial&amp;followup=https%3A%2F%2Fcode.google.com%2Fp%2Fremote-control-for-android%2Fwiki%2FTutorial" style="display: block;">Sign in to see your favorites</a><hr class="menuSeparator"><a class="menuItem" href="https://code.google.com/hosting/" style="display: block;">Find open source projects...</a><a class="menuItem" href="https://code.google.com/hosting/createProject" style="display: block;">Create a project...</a></div></div><script type="text/javascript" src="./Tutorial_emote-control-for-android_files/sf_main.jsp"></script></body></html>
